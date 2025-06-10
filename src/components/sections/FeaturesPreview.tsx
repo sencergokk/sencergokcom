@@ -54,7 +54,7 @@ export default function FeaturesPreview() {
             <span className="text-sm font-medium">Öne Çıkan Hizmetlerimiz</span>
           </div>
           
-          <h2 className="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
             Teknolojinin 
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               {' '}Gücü

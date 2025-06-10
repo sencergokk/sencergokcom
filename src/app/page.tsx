@@ -8,6 +8,6 @@ export default function Home() {
       <ModernHeroSection />
       <FeaturesPreview />
       <QuickStats />
-    </main>
+      </main>
   );
 }

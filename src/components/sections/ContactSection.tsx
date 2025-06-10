@@ -66,7 +66,7 @@ export default function ContactSection() {
             <MessageSquare className="w-5 h-5 mr-3 text-green-400" />
             <span className="text-sm font-medium">Bizimle İletişime Geçin</span>
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tight mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.1] tracking-tight mb-8">
             <span className="block">Projenize</span>
             <span className="block bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               Başlayalım

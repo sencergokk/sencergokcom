@@ -62,7 +62,7 @@ export default function AboutSection() {
             <Sparkles className="w-5 h-5 mr-3 text-yellow-400" />
             <span className="text-sm font-medium">Biz Kimiz?</span>
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tight mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.1] tracking-tight mb-8">
             <span className="block">Dijital Dünyanın</span>
             <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               Mimarları
@@ -75,17 +75,17 @@ export default function AboutSection() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
           {stats.map((stat, index) => (
-            <Card key={index} className="group relative overflow-hidden text-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-              <div className={`w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br ${stat.color} shadow-xl group-hover:scale-110 transition-transform duration-300`}>
-                <stat.icon className="h-10 w-10 text-white" />
+            <Card key={index} className="group relative overflow-hidden text-center p-6 md:p-8 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+              <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl flex items-center justify-center mx-auto mb-4 md:mb-6 bg-gradient-to-br ${stat.color} shadow-xl group-hover:scale-110 transition-transform duration-300`}>
+                <stat.icon className="h-8 w-8 md:h-10 md:w-10 text-white" />
               </div>
               <div>
-                <div className="text-5xl font-black text-white mb-2">
+                <div className="text-4xl md:text-5xl font-black text-white mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-300 text-lg">{stat.label}</div>
+                <div className="text-gray-300 text-base md:text-lg">{stat.label}</div>
               </div>
               <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-lg`} />
             </Card>
@@ -155,7 +155,7 @@ export default function AboutSection() {
         {/* Team */}
         <div>
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-black text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
               Uzman Ekibimiz
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">

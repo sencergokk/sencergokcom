@@ -409,6 +409,33 @@ html {
 
 .fade-in-section.is-visible {
   opacity: 1;
-  transform: none;
+  transform: translateY(0);
   visibility: visible;
+}
+
+/* Chatbase Chatbot Custom Styles */
+#chatbase-bubble-button {
+  width: 64px !important;
+  height: 64px !important;
+  bottom: 2rem !important; /* 32px */
+  right: 2rem !important; /* 32px */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+}
+
+#chatbase-bubble-window {
+  width: 380px !important;
+  height: 70% !important;
+  bottom: 8rem !important; /* 128px */
+  right: 2rem !important; /* 32px */
+}
+
+@media (max-width: 768px) {
+  #chatbase-bubble-window {
+    width: 100% !important;
+    height: 90% !important;
+    max-width: 90vw !important;
+    max-height: 85vh !important;
+    right: 5vw !important;
+    bottom: 8rem !important; /* 128px */
+  }
 }

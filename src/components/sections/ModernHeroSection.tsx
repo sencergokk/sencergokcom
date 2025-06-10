@@ -7,53 +7,33 @@ import {
 	ArrowRight,
 	Sparkles,
 	Zap,
-	Globe,
-	Cpu,
 } from 'lucide-react';
 import { COMPANY_INFO } from '@/lib/constants';
 
 export default function ModernHeroSection() {
-	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {
 		setIsLoaded(true);
-		
-		const handleMouseMove = (e: MouseEvent) => {
-			setMousePosition({
-				x: (e.clientX / window.innerWidth) * 100,
-				y: (e.clientY / window.innerHeight) * 100,
-			});
-		};
-
-		window.addEventListener('mousemove', handleMouseMove);
-		return () => window.removeEventListener('mousemove', handleMouseMove);
 	}, []);
 
-	const floatingElements = [
-		{ icon: Globe, delay: 0, size: 'w-16 h-16', position: 'top-20 left-10' },
-		{ icon: Zap, delay: 1000, size: 'w-12 h-12', position: 'top-40 right-20' },
-		{ icon: Cpu, delay: 2000, size: 'w-14 h-14', position: 'bottom-40 left-20' },
-		{ icon: Sparkles, delay: 1500, size: 'w-10 h-10', position: 'bottom-20 right-10' },
-	];
-
 	return (
-		<section id="home" className="relative min-h-screen overflow-hidden">
+		<section id="home" className="relative min-h-screen overflow-hidden pt-32">
 			{/* Animated Background */}
 			<div className="absolute inset-0">
 				{/* Gradient Orbs */}
 				<div 
 					className="absolute w-96 h-96 bg-gradient-to-r from-blue-400/30 to-purple-600/30 rounded-full blur-3xl animate-pulse"
 					style={{
-						left: `${20 + mousePosition.x * 0.1}%`,
-						top: `${10 + mousePosition.y * 0.1}%`,
+						left: `25%`,
+						top: `15%`,
 					}}
 				/>
 				<div 
 					className="absolute w-80 h-80 bg-gradient-to-r from-purple-400/20 to-pink-600/20 rounded-full blur-3xl animate-pulse"
 					style={{
-						right: `${10 + mousePosition.x * 0.05}%`,
-						bottom: `${20 + mousePosition.y * 0.05}%`,
+						right: `15%`,
+						bottom: `25%`,
 						animationDelay: '1s'
 					}}
 				/>
@@ -61,19 +41,9 @@ export default function ModernHeroSection() {
 				{/* Grid Pattern */}
 				<div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
 				
-				{/* Floating Icons */}
-				{floatingElements.map((element, index) => (
-					<div
-						key={index}
-						className={`absolute ${element.position} ${element.size} text-white/20 animate-float`}
-						style={{ animationDelay: `${element.delay}ms` }}
-					>
-						<element.icon className="w-full h-full" />
-					</div>
-				))}
 			</div>
 
-			<div className="relative z-10 container mx-auto px-4 min-h-screen flex items-center pt-32">
+			<div className="relative z-10 container mx-auto px-4 flex items-center">
 				<div className="grid lg:grid-cols-2 gap-16 items-center w-full">
 					{/* Left Content */}
 					<div className={`space-y-8 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -84,8 +54,8 @@ export default function ModernHeroSection() {
 						</div>
 						
 						{/* Main Heading */}
-						<div className="space-y-6">
-							<h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tight">
+						<div className="space-y-6 text-center lg:text-left">
+							<h1 className="text-5xl md:text-6xl lg:text-8xl font-black text-white leading-[1.1] tracking-tight">
 								<span className="block">Dijital</span>
 								<span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
 									Geleceği
@@ -102,10 +72,10 @@ export default function ModernHeroSection() {
 
 						{/* CTA Buttons */}
 						<div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-6 pt-8">
-							<Link href="/contact">
+							<Link href="/contact" className="w-full sm:w-auto">
 								<Button
 									size="lg"
-									className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-6 text-lg font-semibold rounded-2xl h-auto border-0 shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 cursor-pointer"
+									className="group w-full relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-6 text-lg font-semibold rounded-2xl h-auto border-0 shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 cursor-pointer"
 								>
 									<span className="relative z-10 flex items-center">
 										Projeni Başlat
@@ -115,11 +85,11 @@ export default function ModernHeroSection() {
 								</Button>
 							</Link>
 
-							<Link href="/services">
+							<Link href="/services" className="w-full sm:w-auto">
 								<Button
 									variant="outline"
 									size="lg"
-									className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20 px-10 py-6 text-lg font-semibold rounded-2xl h-auto hover:border-white/40 transition-all duration-300 cursor-pointer"
+									className="w-full bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20 px-10 py-6 text-lg font-semibold rounded-2xl h-auto hover:border-white/40 transition-all duration-300 cursor-pointer"
 								>
 									Hizmetleri Keşfet
 								</Button>
@@ -127,18 +97,18 @@ export default function ModernHeroSection() {
 						</div>
 
 						{/* Quick Stats */}
-						<div className="grid grid-cols-3 gap-8 pt-12">
+						<div className="grid grid-cols-3 gap-4 md:gap-8 pt-12">
 							<div className="text-center">
-								<div className="text-4xl font-black text-white mb-2">500+</div>
-								<div className="text-sm text-gray-400 font-medium">Başarılı Proje</div>
+								<div className="text-3xl md:text-4xl font-black text-white mb-2">500+</div>
+								<div className="text-xs md:text-sm text-gray-400 font-medium">Başarılı Proje</div>
 							</div>
 							<div className="text-center">
-								<div className="text-4xl font-black text-white mb-2">98%</div>
-								<div className="text-sm text-gray-400 font-medium">Memnuniyet</div>
+								<div className="text-3xl md:text-4xl font-black text-white mb-2">98%</div>
+								<div className="text-xs md:text-sm text-gray-400 font-medium">Memnuniyet</div>
 							</div>
 							<div className="text-center">
-								<div className="text-4xl font-black text-white mb-2">24/7</div>
-								<div className="text-sm text-gray-400 font-medium">Destek</div>
+								<div className="text-3xl md:text-4xl font-black text-white mb-2">24/7</div>
+								<div className="text-xs md:text-sm text-gray-400 font-medium">Destek</div>
 							</div>
 						</div>
 					</div>
@@ -149,9 +119,6 @@ export default function ModernHeroSection() {
 							{/* Main Card with 3D Effect */}
 							<div 
 								className="relative group"
-								style={{
-									transform: `perspective(1000px) rotateY(${mousePosition.x * 0.02 - 1}deg) rotateX(${mousePosition.y * 0.02 - 1}deg)`,
-								}}
 							>
 								{/* Glow Effect */}
 								<div className="absolute -inset-4 bg-gradient-to-r from-blue-600/50 to-purple-600/50 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />

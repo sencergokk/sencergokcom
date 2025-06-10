@@ -20,7 +20,7 @@ const FloatingWhatsAppButton = () => {
 
 	return (
 		<div
-			className={`fixed bottom-8 right-8 z-50 transition-all duration-500 ease-in-out ${
+			className={`fixed bottom-28 right-8 z-50 transition-all duration-500 ease-in-out ${
 				isVisible
 					? 'opacity-100 translate-y-0'
 					: 'opacity-0 translate-y-5'
