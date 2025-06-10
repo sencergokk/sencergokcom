@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://skycer.com'; // Burayı canlıya çıkınca kendi domaininizle değiştirmeyi unutmayın
+  const baseUrl = 'https://skycer.com'; //Burayı canlıya çıkınca kendi domaininizle değiştirmeyi unutmayın!!!
 
   const staticPages = [
     { url: '/', priority: 1.0 },
