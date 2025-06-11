@@ -18,14 +18,11 @@ export const ThemeSwitcher = () => {
 
   const handleThemeChange = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
-    
-    // @ts-ignore
+
     if (!document.startViewTransition) {
       setTheme(newTheme);
       return;
     }
-
-    // @ts-ignore
     document.startViewTransition(() => {
       setTheme(newTheme);
     });
