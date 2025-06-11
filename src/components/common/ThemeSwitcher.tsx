@@ -16,10 +16,25 @@ export const ThemeSwitcher = () => {
     return null;
   }
 
+  const handleThemeChange = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    
+    // @ts-ignore
+    if (!document.startViewTransition) {
+      setTheme(newTheme);
+      return;
+    }
+
+    // @ts-ignore
+    document.startViewTransition(() => {
+      setTheme(newTheme);
+    });
+  };
+
   return (
     <button
-      className="p-2 rounded-md text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className="p-2 rounded-md text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer"
+      onClick={handleThemeChange}
     >
       {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
     </button>

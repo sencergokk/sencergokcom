@@ -58,7 +58,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center space-x-4">
             <Link href="/contact">
               <Button
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold cursor-pointer"
               >
                 İletişime Geç
               </Button>
@@ -95,7 +95,7 @@ export default function Header() {
                   <Link href="/contact" className="w-full">
                     <Button
                       onClick={() => setIsMenuOpen(false)}
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full py-4 text-base rounded-xl"
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full py-4 text-base rounded-xl cursor-pointer"
                     >
                       İletişime Geç
                     </Button>
