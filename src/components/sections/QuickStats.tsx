@@ -36,13 +36,13 @@ export default function QuickStats() {
   ];
 
   return (
-    <section className="py-32 bg-gradient-to-b from-slate-800 to-slate-900">
+    <section className="py-32 bg-gray-50 dark:bg-gradient-to-b dark:from-slate-800 dark:to-slate-900">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <Card 
               key={index}
-              className="group relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+              className="group relative overflow-hidden bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
             >
               <CardContent className="p-8 text-center">
                 {/* Icon */}
@@ -51,17 +51,17 @@ export default function QuickStats() {
                 </div>
                 
                 {/* Value */}
-                <div className="text-4xl lg:text-5xl font-black text-white mb-2 group-hover:scale-105 transition-transform duration-300">
+                <div className="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white mb-2 group-hover:scale-105 transition-transform duration-300">
                   {stat.value}
                 </div>
                 
                 {/* Label */}
-                <h3 className="text-xl font-bold text-white mb-2">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {stat.label}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-gray-300 text-sm">
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
                   {stat.description}
                 </p>
                 

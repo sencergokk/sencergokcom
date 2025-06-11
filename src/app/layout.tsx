@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsAppButton from "@/components/common/FloatingWhatsAppButton";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,14 +42,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className="scroll-smooth">
+    <html lang="tr" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased font-sans bg-slate-900 text-white bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900`}
+        className={`${inter.variable} ${jetbrainsMono.variable} antialiased font-sans bg-white text-black dark:bg-slate-900 dark:text-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-purple-900 dark:to-slate-900`}
       >
-        <Header />
-        {children}
-        <Footer />
-        <FloatingWhatsAppButton />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+          <Footer />
+          <FloatingWhatsAppButton />
+        </ThemeProvider>
         <script
           dangerouslySetInnerHTML={{
             __html: `

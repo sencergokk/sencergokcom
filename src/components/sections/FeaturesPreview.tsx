@@ -49,19 +49,19 @@ export default function FeaturesPreview() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white mb-8">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-900/10 dark:bg-white/10 backdrop-blur-md border border-gray-900/20 dark:border-white/20 text-gray-800 dark:text-white mb-8">
             <Sparkles className="w-4 h-4 mr-2 text-yellow-400" />
             <span className="text-sm font-medium">Öne Çıkan Hizmetlerimiz</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white mb-6 leading-tight">
             Teknolojinin 
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-purple-500 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
               {' '}Gücü
             </span>
           </h2>
           
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Her bir hizmetimiz, işletmenizin dijital dönüşümünde devrim yaratacak 
             ileri teknoloji çözümleri sunuyor.
           </p>
@@ -72,7 +72,7 @@ export default function FeaturesPreview() {
           {features.map((feature, index) => (
             <Card 
               key={index}
-              className="group relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+              className="group relative overflow-hidden bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
               style={{ animationDelay: feature.delay }}
             >
               <CardContent className="p-8 text-center">
@@ -82,15 +82,15 @@ export default function FeaturesPreview() {
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                   {feature.description}
                 </p>
                 
                 {/* Hover Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-300/20 dark:from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </CardContent>
             </Card>
           ))}
@@ -98,18 +98,18 @@ export default function FeaturesPreview() {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-xl rounded-3xl p-12 border border-white/10">
-            <h3 className="text-3xl font-bold text-white mb-4">
+          <div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 dark:from-blue-600/20 dark:to-purple-600/20 backdrop-blur-xl rounded-3xl p-12 border border-gray-200 dark:border-white/10">
+            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
               Daha Fazlasını Keşfetmeye Hazır mısın?
             </h3>
-            <p className="text-gray-300 mb-8 text-lg">
+            <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg">
               Tüm hizmetlerimizi görüntüle ve size en uygun çözümü bulalım.
             </p>
             
             <Link href="/services">
               <Button 
                 size="lg"
-                className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-6 text-lg font-semibold rounded-2xl h-auto border-0 shadow-xl hover:shadow-blue-500/25 transition-all duration-300"
+                className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-6 text-lg font-semibold rounded-2xl h-auto border-0 shadow-xl hover:shadow-blue-500/25 transition-all duration-300 cursor-pointer"
               >
                 Tüm Hizmetleri Gör
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />

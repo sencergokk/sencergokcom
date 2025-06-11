@@ -54,21 +54,21 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="relative overflow-hidden pt-32 pb-20">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-24">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white mb-8">
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gray-900/10 dark:bg-white/10 backdrop-blur-md border border-gray-900/20 dark:border-white/20 text-gray-800 dark:text-white mb-8">
             <Sparkles className="w-5 h-5 mr-3 text-yellow-400" />
             <span className="text-sm font-medium">Biz Kimiz?</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.1] tracking-tight mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-gray-900 dark:text-white leading-[1.1] tracking-tight mb-8">
             <span className="block">Dijital Dünyanın</span>
-            <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
               Mimarları
             </span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {COMPANY_INFO.mission} Deneyimli ekibimiz ve modern teknolojilerimizle 
             her projede mükemmelliği hedefliyoruz.
           </p>
@@ -77,15 +77,15 @@ export default function AboutSection() {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
           {stats.map((stat, index) => (
-            <Card key={index} className="group relative overflow-hidden text-center p-6 md:p-8 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+            <Card key={index} className="group relative overflow-hidden text-center p-6 md:p-8 bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
               <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl flex items-center justify-center mx-auto mb-4 md:mb-6 bg-gradient-to-br ${stat.color} shadow-xl group-hover:scale-110 transition-transform duration-300`}>
                 <stat.icon className="h-8 w-8 md:h-10 md:w-10 text-white" />
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-black text-white mb-2">
+                <div className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-300 text-base md:text-lg">{stat.label}</div>
+                <div className="text-gray-600 dark:text-gray-300 text-base md:text-lg">{stat.label}</div>
               </div>
               <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-lg`} />
             </Card>
@@ -97,10 +97,10 @@ export default function AboutSection() {
           {/* Story */}
           <div className="lg:col-span-3 space-y-8">
             <div>
-              <h2 className="text-5xl font-black text-white mb-8">
+              <h2 className="text-5xl font-black text-gray-900 dark:text-white mb-8">
                 Hikayemiz
               </h2>
-              <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
+              <div className="space-y-6 text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                 <p>
                   {COMPANY_INFO.founded} yılında Ankara&apos;da kurulan Skycer, mobil öncelikli
                   dijital çözümler üreten yenilikçi bir teknoloji stüdyosudur.
@@ -119,9 +119,9 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
+            <div className="bg-gray-100 dark:bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-gray-200 dark:border-white/10">
               <Quote className="h-8 w-8 text-blue-400 mb-4" />
-              <p className="text-xl text-gray-200 italic mb-4">
+              <p className="text-xl text-gray-700 dark:text-gray-200 italic mb-4">
                 &ldquo;Teknoloji, işletmelerin potansiyelini ortaya çıkaran en güçlü araçtır. 
                 Biz de bu gücü müşterilerimizin başarısı için kullanıyoruz.&rdquo;
               </p>
@@ -134,15 +134,15 @@ export default function AboutSection() {
           {/* Values */}
           <div className="lg:col-span-2 space-y-6">
             {values.map((value, index) => (
-              <div key={index} className={`group relative flex items-start space-x-6 p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-xl`}>
+              <div key={index} className={`group relative flex items-start space-x-6 p-6 bg-white dark:bg-white/5 backdrop-blur-xl rounded-2xl border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 transition-all duration-300 hover:shadow-xl`}>
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${value.color} shadow-lg`}>
                     <value.icon className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white mb-2">
+                  <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                     {value.title}
                   </h4>
-                  <p className="text-gray-300">
+                  <p className="text-gray-600 dark:text-gray-300">
                     {value.description}
                   </p>
                 </div>
@@ -155,10 +155,10 @@ export default function AboutSection() {
         {/* Team */}
         <div>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
               Uzman Ekibimiz
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Alanında uzman profesyonellerden oluşan ekibimizle 
               projelerinizi en iyi şekilde hayata geçiriyoruz.
             </p>
@@ -166,16 +166,16 @@ export default function AboutSection() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {TEAM_MEMBERS.map((member) => (
-              <Card key={member.id} className="group relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 text-center p-8">
+              <Card key={member.id} className="group relative overflow-hidden bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 text-center p-8">
                 <CardContent className="p-0">
-                  <Avatar className="w-32 h-32 mx-auto mb-6 ring-4 ring-white/10 group-hover:ring-blue-400/50 transition-all duration-300">
+                  <Avatar className="w-32 h-32 mx-auto mb-6 ring-4 ring-gray-200 dark:ring-white/10 group-hover:ring-blue-400/50 transition-all duration-300">
                     <AvatarImage src={member.image} alt={member.name} />
                     <AvatarFallback className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-white">
                       {member.name.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>
                   </Avatar>
                   
-                  <h4 className="text-2xl font-bold text-white mb-2">
+                  <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                     {member.name}
                   </h4>
                   
@@ -186,7 +186,7 @@ export default function AboutSection() {
                     {member.role}
                   </Badge>
                   
-                  <p className="text-gray-300 mb-6 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                     {member.bio}
                   </p>
                   
@@ -194,7 +194,7 @@ export default function AboutSection() {
                     {member.social.linkedin && (
                       <a 
                         href={member.social.linkedin}
-                        className="text-gray-400 hover:text-blue-400 transition-colors"
+                        className="text-gray-500 dark:text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                       >
                         <Linkedin className="h-6 w-6" />
                       </a>
@@ -202,7 +202,7 @@ export default function AboutSection() {
                     {member.social.twitter && (
                       <a 
                         href={member.social.twitter}
-                        className="text-gray-400 hover:text-sky-400 transition-colors"
+                        className="text-gray-500 dark:text-gray-400 hover:text-sky-400 transition-colors cursor-pointer"
                       >
                         <Twitter className="h-6 w-6" />
                       </a>
@@ -210,7 +210,7 @@ export default function AboutSection() {
                     {member.social.github && (
                       <a 
                         href={member.social.github}
-                        className="text-gray-400 hover:text-white transition-colors"
+                        className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors cursor-pointer"
                       >
                         <Github className="h-6 w-6" />
                       </a>

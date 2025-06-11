@@ -9,15 +9,15 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-950 text-white border-t border-white/10">
+    <footer className="bg-gray-100 dark:bg-slate-950 text-gray-800 dark:text-white border-t border-gray-200 dark:border-white/10">
       <div className="container mx-auto px-4 pt-24 pb-12">
         {/* Top Section with Newsletter */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 pb-16 border-b border-white/10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 pb-16 border-b border-gray-200 dark:border-white/10">
           <div className="text-center lg:text-left">
             <h2 className="text-3xl md:text-4xl font-bold mb-3">
               Gelişmelerden Haberdar Olun
             </h2>
-            <p className="text-gray-400 text-base md:text-lg max-w-lg mx-auto lg:mx-0">
+            <p className="text-gray-500 dark:text-gray-400 text-base md:text-lg max-w-lg mx-auto lg:mx-0">
               En son dijital trendler ve hizmetlerimiz hakkında bilgi almak için bültenimize abone olun.
             </p>
           </div>
@@ -25,7 +25,7 @@ export default function Footer() {
             <Input 
               type="email" 
               placeholder="E-posta adresiniz" 
-              className="h-14 bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:bg-white/10 flex-grow rounded-xl" 
+              className="h-14 bg-gray-200 dark:bg-white/5 border-gray-300 dark:border-white/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:bg-gray-300 dark:focus:bg-white/10 flex-grow rounded-xl" 
             />
             <Button 
               type="submit" 
@@ -47,27 +47,27 @@ export default function Footer() {
               </div>
               <span className="text-2xl font-bold">{COMPANY_INFO.name}</span>
             </Link>
-            <p className="text-gray-400 leading-relaxed pr-4">
+            <p className="text-gray-500 dark:text-gray-400 leading-relaxed pr-4">
               {COMPANY_INFO.description}
             </p>
             <div className="flex space-x-4">
-              <Link href={CONTACT_INFO.social.linkedin} className="text-gray-400 hover:text-blue-400 transition-colors"><Linkedin className="h-6 w-6" /></Link>
-              <Link href={CONTACT_INFO.social.twitter} className="text-gray-400 hover:text-sky-400 transition-colors"><Twitter className="h-6 w-6" /></Link>
+              <Link href={CONTACT_INFO.social.linkedin} className="text-gray-500 dark:text-gray-400 hover:text-blue-400 transition-colors"><Linkedin className="h-6 w-6" /></Link>
+              <Link href={CONTACT_INFO.social.twitter} className="text-gray-500 dark:text-gray-400 hover:text-sky-400 transition-colors"><Twitter className="h-6 w-6" /></Link>
               {CONTACT_INFO.social.github && (
-                <Link href={CONTACT_INFO.social.github} className="text-gray-400 hover:text-white transition-colors"><Github className="h-6 w-6" /></Link>
+                <Link href={CONTACT_INFO.social.github} className="text-gray-500 dark:text-gray-400 hover:text-white transition-colors"><Github className="h-6 w-6" /></Link>
               )}
-              <Link href={CONTACT_INFO.social.facebook} className="text-gray-400 hover:text-blue-600 transition-colors"><Facebook className="h-6 w-6" /></Link>
-              <Link href={CONTACT_INFO.social.instagram} className="text-gray-400 hover:text-pink-500 transition-colors"><Instagram className="h-6 w-6" /></Link>
+              <Link href={CONTACT_INFO.social.facebook} className="text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors"><Facebook className="h-6 w-6" /></Link>
+              <Link href={CONTACT_INFO.social.instagram} className="text-gray-500 dark:text-gray-400 hover:text-pink-500 transition-colors"><Instagram className="h-6 w-6" /></Link>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold tracking-wider uppercase text-gray-400">Hızlı Bağlantılar</h3>
+            <h3 className="text-lg font-semibold tracking-wider uppercase text-gray-500 dark:text-gray-400">Hızlı Bağlantılar</h3>
             <ul className="space-y-3">
               {NAVIGATION_ITEMS.map(item => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-gray-300 hover:text-white transition-colors">
+                  <Link href={item.href} className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
                     {item.name}
                   </Link>
                 </li>
@@ -77,25 +77,25 @@ export default function Footer() {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold tracking-wider uppercase text-gray-400">Hizmetlerimiz</h3>
+            <h3 className="text-lg font-semibold tracking-wider uppercase text-gray-500 dark:text-gray-400">Hizmetlerimiz</h3>
             <ul className="space-y-3">
-              <li><Link href="/services#web" className="text-gray-300 hover:text-white transition-colors">Web Sitesi Tasarımı</Link></li>
-              <li><Link href="/services#seo" className="text-gray-300 hover:text-white transition-colors">SEO Optimizasyonu</Link></li>
-              <li><Link href="/services#support" className="text-gray-300 hover:text-white transition-colors">Teknik Destek</Link></li>
-              <li><Link href="/services#chatbot" className="text-gray-300 hover:text-white transition-colors">Chatbot Çözümleri</Link></li>
+              <li><Link href="/services#web" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Web Sitesi Tasarımı</Link></li>
+              <li><Link href="/services#seo" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">SEO Optimizasyonu</Link></li>
+              <li><Link href="/services#support" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Teknik Destek</Link></li>
+              <li><Link href="/services#chatbot" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Chatbot Çözümleri</Link></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold tracking-wider uppercase text-gray-400">İletişim</h3>
+            <h3 className="text-lg font-semibold tracking-wider uppercase text-gray-500 dark:text-gray-400">İletişim</h3>
             <address className="space-y-4 not-italic">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                <a href={`mailto:${CONTACT_INFO.email}`} className="text-gray-300 hover:text-white transition-colors break-all">{CONTACT_INFO.email}</a>
+                <a href={`mailto:${CONTACT_INFO.email}`} className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors break-all">{CONTACT_INFO.email}</a>
               </div>
               <div className="flex items-start space-x-3">
-                <p className="text-gray-300">
+                <p className="text-gray-600 dark:text-gray-300">
                   {CONTACT_INFO.address}
                 </p>
               </div>
@@ -103,13 +103,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <Separator className="my-12 bg-white/10" />
+        <Separator className="my-12 bg-gray-200 dark:bg-white/10" />
 
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-4 md:space-y-0">
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 dark:text-gray-500 text-sm">
             © {currentYear} {COMPANY_INFO.name}. Tüm hakları saklıdır.
           </p>
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 dark:text-gray-500 text-sm">
             Türkiye&apos;de ❤️ ile tasarlandı.
           </p>
         </div>

@@ -71,14 +71,14 @@ export default function ProjectGrid() {
   ];
 
   return (
-    <section className="py-24 md:py-32">
+    <section id="projects-grid" className="py-24 md:py-32 bg-gray-50 dark:bg-transparent">
       <div className="container mx-auto px-4">
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <Card 
               key={project.id}
-              className="group overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+              className="group overflow-hidden bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
             >
               {/* Project Image */}
               <div className="relative overflow-hidden h-64">
@@ -99,12 +99,12 @@ export default function ProjectGrid() {
 
               <CardContent className="p-6">
                 {/* Project Title */}
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-gray-300 mb-4 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -113,7 +113,7 @@ export default function ProjectGrid() {
                   {project.technologies.map((tech, index) => (
                     <span 
                       key={index}
-                      className="px-3 py-1 text-xs bg-white/10 text-gray-300 rounded-full border border-white/20"
+                      className="px-3 py-1 text-xs bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-gray-300 rounded-full border border-gray-200 dark:border-white/20"
                     >
                       {tech}
                     </span>
@@ -132,7 +132,7 @@ export default function ProjectGrid() {
                   <Button 
                     size="sm" 
                     variant="ghost" 
-                    className="text-blue-400 hover:text-blue-300 p-2"
+                    className="text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 p-2 cursor-pointer"
                   >
                     <ExternalLink className="w-4 h-4" />
                   </Button>
